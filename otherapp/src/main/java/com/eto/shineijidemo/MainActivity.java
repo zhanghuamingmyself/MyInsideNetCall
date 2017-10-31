@@ -2,10 +2,6 @@ package com.eto.shineijidemo;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.res.Configuration;
-import android.graphics.ImageFormat;
-import android.graphics.PixelFormat;
-import android.hardware.Camera;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
@@ -16,7 +12,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-import android.widget.VideoView;
 
 
 import com.eto.udpvideo.mamager.VideoCall;
@@ -30,7 +25,6 @@ import java.lang.reflect.Method;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.util.Enumeration;
-import java.util.List;
 
 public class MainActivity extends Activity {
 
@@ -129,8 +123,8 @@ public class MainActivity extends Activity {
                     @Override
                     public void run() {
                         VideoCall.refreshCamra();
-//                        VideoCall.setOutVolume(3.0f);
-                        VideoCall.setInputVolume(3.0f);
+                        VideoCall.setOutVolume(0.5f);
+                        VideoCall.setInputVolume(0.5f);
                     }
                 });
 
@@ -217,7 +211,7 @@ public class MainActivity extends Activity {
             public void onGetRetData(String data,String ip) {
 
             }
-        },this,"6e8d082f20ecf5845859d69a17053b94",false);
+        },this,"0b909897f5d73e1f9c90e2c7da97fc5c",false);
 
         setTitle(getLocalIpAddress());
         VideoCall.initCameraConfig(this,layout_local,layout_remote);
